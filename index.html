@@ -52,7 +52,8 @@
   }
 
   * { box-sizing: border-box; }
-  html, body { height: 100%; }
+  html { scroll-behavior: smooth; }
+  html, body { min-height: 100%; }
   body {
     margin: 0;
     background: var(--bg);
@@ -80,10 +81,54 @@
 
   main {
     flex: 1;
-    display: grid;
-    place-items: center;
+    display: flex; flex-direction: column; align-items: center;
     padding: 72px 16px 32px;
   }
+  .hero { min-height: calc(100vh - 140px); min-height: calc(100svh - 140px); display: grid; place-items: center; width: 100%; }
+  .hint-more { display: block; text-align: center; margin: 18px auto 0; font-size: 13px; color: var(--soft); text-decoration: none; }
+  .hint-more:hover { color: var(--brand-text); }
+
+  /* How to install, and questions */
+  section.more { width: 100%; max-width: 680px; margin: 0 auto; padding: 40px 0 8px; }
+  section.more h2 { font-size: 22px; margin: 0 0 16px; letter-spacing: -0.01em; }
+  .tabs { display: inline-flex; gap: 4px; padding: 4px; border-radius: 10px; background: var(--card); border: 1px solid var(--line); margin: 0 0 16px; }
+  .tabs button {
+    border: 0; background: transparent; color: var(--soft);
+    font: inherit; font-weight: 600; font-size: 14px; padding: 8px 16px; border-radius: 7px; cursor: pointer;
+  }
+  .tabs button[aria-selected="true"] { background: var(--halo); color: var(--brand-text); }
+  .tabs button:focus-visible { outline: 2px solid var(--brand-text); outline-offset: 1px; }
+  .panel { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; }
+  .panel[hidden] { display: none; }
+  ol.steps { margin: 0; padding: 0; list-style: none; counter-reset: step; }
+  ol.steps li { counter-increment: step; position: relative; padding: 0 0 14px 40px; }
+  ol.steps li:last-child { padding-bottom: 0; }
+  ol.steps li::before {
+    content: counter(step); position: absolute; left: 0; top: 0;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--brand); color: #fff; font-size: 13px; font-weight: 700;
+    display: grid; place-items: center;
+  }
+  ol.steps b { font-weight: 600; }
+  .steps .sub { display: block; color: var(--soft); font-size: 14px; margin-top: 2px; }
+  .order { margin: 14px 0 0; font-size: 14px; color: var(--soft); }
+  .order b { color: var(--ink); font-weight: 600; }
+
+  .faq { border-top: 1px solid var(--line); }
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq summary {
+    list-style: none; cursor: pointer; padding: 16px 36px 16px 2px; position: relative;
+    font-weight: 600;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: ""; position: absolute; right: 8px; top: 50%; width: 9px; height: 9px;
+    border-right: 2px solid var(--soft); border-bottom: 2px solid var(--soft);
+    transform: translateY(-70%) rotate(45deg); transition: transform .2s;
+  }
+  .faq details[open] summary::after { transform: translateY(-30%) rotate(-135deg); }
+  .faq summary:focus-visible { outline: 2px solid var(--brand-text); outline-offset: 2px; border-radius: 4px; }
+  .faq p { margin: 0 0 16px; color: var(--soft); padding-right: 24px; }
   .card {
     width: 100%; max-width: 440px;
     background: var(--card);
@@ -138,7 +183,7 @@
   .note[hidden] { display: none; }
 
   footer {
-    padding: 0 16px 24px; text-align: center;
+    padding: 28px 16px 28px; text-align: center;
     font-size: 13px; color: var(--soft);
   }
   /* The signature: the same coffee mark as clenol.lk and omil.lk. The cup sits
@@ -173,6 +218,8 @@
 </button>
 
 <main>
+  <div class="hero">
+  <div>
   <div class="card">
     <div class="logo" aria-hidden="true"><span class="mug notranslate" translate="no">☕️</span></div>
 
@@ -191,6 +238,81 @@
       To print from this phone, scan the sign on the office wall instead.
     </p>
   </div>
+  <a class="hint-more" href="#install">How to install &middot; Questions &darr;</a>
+  </div>
+  </div>
+
+  <section class="more" id="install" aria-labelledby="install-h">
+    <h2 id="install-h">How to install</h2>
+    <div class="tabs" role="tablist" aria-label="Choose your computer">
+      <button type="button" role="tab" id="tab-win" aria-controls="p-win" aria-selected="true">Windows</button>
+      <button type="button" role="tab" id="tab-mac" aria-controls="p-mac" aria-selected="false">Mac</button>
+    </div>
+
+    <div class="panel" id="p-win" role="tabpanel" aria-labelledby="tab-win">
+      <ol class="steps">
+        <li><b>Download PrintBridgeSetup.exe</b> with the button above.<span class="sub">Windows 10 or 11, 64-bit.</span></li>
+        <li><b>Open it.</b> If a blue &ldquo;Windows protected your PC&rdquo; box appears, click <b>More info</b>, then <b>Run anyway</b>, and allow the changes.</li>
+        <li><b>Choose what this computer does:</b> the main computer, a computer with a printer, or one that only prints. Give it a name like &ldquo;Front desk&rdquo;.</li>
+        <li><b>On the main computer</b>, tick <b>Make this the only main computer</b> and <b>Give this computer a fixed address</b> (recommended).</li>
+        <li><b>Press Finish.</b> On the main computer, the sign for the wall opens: print it and put it up.</li>
+      </ol>
+    </div>
+
+    <div class="panel" id="p-mac" role="tabpanel" aria-labelledby="tab-mac" hidden>
+      <ol class="steps">
+        <li><b>Download the installer</b> with the button above.<span class="sub">Apple Silicon and Intel Macs.</span></li>
+        <li><b>Double-click PrintBridge.pkg.</b> If macOS says it can&rsquo;t be opened, click <b>Done</b>, then open <b>System Settings &rarr; Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b>.</li>
+        <li><b>Follow the installer</b> and enter your Mac password. A setup page opens in your browser.</li>
+        <li><b>Choose what this Mac does</b> and give it a name. On the main computer, tick <b>Make this the only main computer</b> and <b>Give this computer a fixed address</b>.</li>
+        <li><b>Press Set up PrintBridge</b> and keep the page open until it says <b>All set</b>.</li>
+      </ol>
+    </div>
+
+    <p class="order"><b>Order:</b> the main computer first, then the computers with printers, then the ones that only print. Each finds the main computer by itself.</p>
+  </section>
+
+  <section class="more" aria-labelledby="faq-h">
+    <h2 id="faq-h">Questions</h2>
+    <div class="faq">
+      <details>
+        <summary>What does PrintBridge do?</summary>
+        <p>It lets everyone in the office print to any office printer from their own phone or computer. One computer runs a small printing page; people open it, choose a file and a printer, and press Print. Computers with PrintBridge can also print straight from Word, Excel and other programs.</p>
+      </details>
+      <details>
+        <summary>Do people need an app or an account?</summary>
+        <p>No. On a phone, people scan the sign on the wall (or type its address) and print from the browser. Only the computers in the office get PrintBridge installed.</p>
+      </details>
+      <details>
+        <summary>Which computer should be the main computer?</summary>
+        <p>One that stays on during office hours, ideally connected by cable. It runs the printing page for everyone. Set up only one; ticking &ldquo;Make this the only main computer&rdquo; makes any other one switch over to it by itself.</p>
+      </details>
+      <details>
+        <summary>What happens after a power cut?</summary>
+        <p>PrintBridge starts again on its own when the computers are switched on, with nobody signed in, and the computers find each other again. Jobs that were waiting are sent again; a page that was cut off mid-print is not printed twice.</p>
+      </details>
+      <details>
+        <summary>How do I update it?</summary>
+        <p>You don&rsquo;t need to. From version 4.1.3 on, each computer installs new versions by itself, when nothing is printing, and keeps all its settings. To check straight away, choose &ldquo;Update PrintBridge now&rdquo; in the Start menu (Windows) or the PrintBridge folder in Applications (Mac).</p>
+      </details>
+      <details>
+        <summary>Is it safe?</summary>
+        <p>The printing page only works inside the office network. Updates are only installed if they carry PrintBridge&rsquo;s own signature, and each installer is checked against it before it runs, so a changed or fake file is never installed.</p>
+      </details>
+      <details>
+        <summary>Can it print Word, Excel and photos?</summary>
+        <p>PDFs always print. For Word, Excel, PowerPoint files and photos, tick &ldquo;Also install LibreOffice&rdquo; (free) when setting up the main computer.</p>
+      </details>
+      <details>
+        <summary>How do I remove it?</summary>
+        <p>Windows: Settings &rarr; Apps &rarr; PrintBridge &rarr; Uninstall. Mac: Applications &rarr; PrintBridge &rarr; Uninstall PrintBridge. It removes everything it added, including the &ldquo;PrintBridge&rdquo; printer, and puts the power settings back.</p>
+      </details>
+      <details>
+        <summary>Something isn&rsquo;t working. What do I check?</summary>
+        <p>Open &ldquo;Check PrintBridge&rdquo; on that computer (Start menu, or the PrintBridge folder in Applications). It says in plain words what is wrong and how to fix it.</p>
+      </details>
+    </div>
+  </section>
 </main>
 
 <footer>
@@ -262,6 +384,19 @@
     label.textContent = "See all downloads";
     other.append(" · for ", link("windows"), " or ", link("mac"));
   }
+
+  // --- How to install: Windows / Mac tabs (the visitor's system first) -----
+  var tabs = { windows: ["tab-win", "p-win"], mac: ["tab-mac", "p-mac"] };
+  function showTab(key) {
+    Object.keys(tabs).forEach(function (k) {
+      var on = k === key;
+      document.getElementById(tabs[k][0]).setAttribute("aria-selected", on ? "true" : "false");
+      document.getElementById(tabs[k][1]).hidden = !on;
+    });
+  }
+  document.getElementById("tab-win").addEventListener("click", function () { showTab("windows"); });
+  document.getElementById("tab-mac").addEventListener("click", function () { showTab("mac"); });
+  if (system === "mac" && !isPhone) showTab("mac");
 
   // --- the version number (just for show; the button works without it) -----
   fetch("https://api.github.com/repos/devnithdev/printbridge-updates/releases/latest", { headers: { Accept: "application/vnd.github+json" } })
