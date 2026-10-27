@@ -1,6 +1,6 @@
 # PrintBridge – installers and updates
 
-Print from any phone or computer to any printer in the office. By @devnithdev.
+Print from any phone or computer to any printer in the office. ☕ by [@devnithdev](https://github.com/devnithdev).
 
 ## Download
 
@@ -20,4 +20,6 @@ Every computer with PrintBridge 4.1.3 or newer checks this page’s latest relea
 
 It only installs a release whose `latest.json` is signed with PrintBridge’s own update key (`latest.json.sig`), and only an installer whose size and SHA-256 fingerprint match the signed file. So neither a changed file here nor anything in between can put a program on the office computers.
 
-This repository holds only the installers and those two files; the source code is kept privately.
+## Source code & license
+
+This repository holds the download page, the installers, and the signed update files. The full source code is open source at **[devnithdev/printbridge](https://github.com/devnithdev/printbridge)** under the [MIT License](LICENSE).
