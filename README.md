@@ -26,6 +26,15 @@ No app to install on phones, no accounts. ☕ by [@devnithdev](https://github.co
 
 ---
 
+## Highlights
+
+* **Zero-install mobile printing**: Scan the QR code on the office wall and print directly from Safari, Chrome, or any mobile browser on iPhone, iPad, and Android. No apps or accounts needed.
+* **Google Cloud Print alternative**: Keeps all printing local to your office Wi-Fi network. No cloud subscriptions, external accounts, or documents leaving your building.
+* **Cross-platform**: Seamlessly connects Windows 10/11 and macOS (Apple Silicon & Intel) machines across the local network.
+* **Smart print preview & queue**: Visual preview, printer type selection (inkjet, laser, dot matrix, thermal/receipt), live queue tracking, and automatic failover.
+
+---
+
 ## Download
 
 Get the newest version from the **[Download Page](https://devnithdev.github.io/printbridge-updates/)** or **[Releases → Latest](https://github.com/devnithdev/printbridge-updates/releases/latest)**:

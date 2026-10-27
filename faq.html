@@ -3,8 +3,68 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PrintBridge questions</title>
-<meta name="description" content="Answers to common questions about PrintBridge: setting it up, printing, printing from anywhere, updates and fixing problems.">
+<title>PrintBridge FAQ – Setup, Network Printing &amp; Troubleshooting</title>
+<meta name="description" content="Frequently asked questions about PrintBridge: setting up office network printing, Google Cloud Print alternative, printing from phone without an app, supported files, and troubleshooting.">
+<link rel="canonical" href="https://devnithdev.github.io/printbridge-updates/faq.html">
+<meta name="keywords" content="PrintBridge FAQ, office printing questions, google cloud print alternative, print from phone without app, network printer setup">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PrintBridge">
+<meta property="og:url" content="https://devnithdev.github.io/printbridge-updates/faq.html">
+<meta property="og:title" content="PrintBridge FAQ – Setup, Network Printing &amp; Troubleshooting">
+<meta property="og:description" content="Answers to common questions about PrintBridge: setting it up, printing, printing from anywhere, updates and fixing problems.">
+<meta property="og:image" content="https://raw.githubusercontent.com/devnithdev/printbridge/main/Source%20code/installer/guide-img/printbridge-badge.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PrintBridge FAQ">
+<meta name="twitter:description" content="Answers to common questions about PrintBridge: setup, printing, and fixing problems.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/devnithdev/printbridge/main/Source%20code/installer/guide-img/printbridge-badge.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does PrintBridge do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It lets everyone in the office print to any office printer from their own phone, tablet or computer. One computer (the main computer) runs a small printing page; people open it, drop in a file, choose a printer and press Print."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do people need an app or an account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. On a phone, people scan the sign on the office wall (or type its address) and print from the browser. No app, no account, no password. Only the office computers get PrintBridge installed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is PrintBridge a free Google Cloud Print alternative?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. PrintBridge solves the same problem Google Cloud Print did: letting phones, tablets, and computers print without manufacturer drivers or complex setup. Unlike cloud services, PrintBridge runs entirely on your local office network with no third-party accounts, subscription fees, or data leaving your premises."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which files can it print?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PDFs always print. Word, Excel, PowerPoint and photos print too when LibreOffice is installed on the main computer: tick 'Also install LibreOffice' during setup."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work on Windows and Mac?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Windows 10 or 11 (64-bit) and Macs (Apple Silicon and Intel). The computers can be mixed: a Mac main computer can print to a printer on a Windows PC, and the other way round."
+      }
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
@@ -277,6 +337,10 @@
         <p>No. On a phone, people scan the sign on the office wall (or type its address) and print from the browser. No app, no account, no password. Only the office computers get PrintBridge installed.</p>
       </details>
       <details>
+        <summary>Is PrintBridge a free Google Cloud Print alternative?</summary>
+        <p>Yes. PrintBridge solves the same problem Google Cloud Print did: letting phones, tablets, and computers print to any printer without manufacturer drivers or complex setup. Unlike cloud services, PrintBridge runs entirely on your local office network with no third-party accounts, subscription fees, or data leaving your building.</p>
+      </details>
+      <details>
         <summary>Which files can it print?</summary>
         <p>PDFs always print. Word, Excel, PowerPoint and photos print too when LibreOffice (free) is installed on the main computer: tick <b>Also install LibreOffice</b> during setup.</p>
       </details>
@@ -327,6 +391,10 @@
       <details>
         <summary>Can I print straight from Word or Excel on an office computer?</summary>
         <p>Yes, on Windows and Mac. PrintBridge adds a printer called <b>PrintBridge</b>. Choose it in any program&rsquo;s Print box, and the printing page opens with your document ready to send to any office printer.</p>
+      </details>
+      <details>
+        <summary>How do guests or phones print without installing an app?</summary>
+        <p>Guests simply connect to the office Wi-Fi, scan the QR code on the wall sign (or open the local URL in Safari or Chrome), choose their document, and tap Print. It works immediately on iPhone, iPad, Android, and laptops with zero setup.</p>
       </details>
       <details>
         <summary>Where can I see my printout?</summary>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://devnithdev.github.io/printbridge-updates/sitemap.xml
