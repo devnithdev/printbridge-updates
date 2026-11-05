@@ -301,7 +301,7 @@
   <section class="more" id="howto" aria-labelledby="howto-h">
     <h2 id="howto-h">Watch the full guide (3 minutes)</h2>
     <div class="video"><iframe id="guideVideo" src="https://www.youtube-nocookie.com/embed/Cx2plyjPf7w?rel=0" title="PrintBridge: the full guide" loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
-    <p style="text-align:center;margin-top:10px;color:var(--soft);font-size:14px">Just want the phone part? <a href="https://youtu.be/R-5XXXhX6Mg">Watch the 48-second version</a>.</p>
+    <p style="text-align:center;margin-top:10px;color:var(--soft);font-size:14px">Just want the phone part? <a id="phoneVideo" href="https://youtu.be/R-5XXXhX6Mg">Watch the short version</a>.</p>
   </section>
 
   <section class="more" id="install" aria-labelledby="install-h">
@@ -438,11 +438,12 @@
 <script>
 // Guide video: Sinhala or Tamil version when that language is picked, otherwise English.
 (function () {
-  var ids = { si: "sP1R5dWC5Hw", ta: "5sw9WdwODrY" }, f = document.getElementById("guideVideo");
+  var ids = { si: "sP1R5dWC5Hw", ta: "5sw9WdwODrY" }, short = { si: "oU3_QhFajBc", ta: "4WxqC4cTjJE" }, f = document.getElementById("guideVideo"), pv = document.getElementById("phoneVideo");
   function pick() {
     var l = ""; try { l = localStorage.getItem("printbridge-language") || ""; } catch (e) {}
     var u = "https://www.youtube-nocookie.com/embed/" + (ids[l] || "Cx2plyjPf7w") + "?rel=0";
     if (f.src !== u) f.src = u;
+    pv.href = "https://youtu.be/" + (short[l] || "R-5XXXhX6Mg");
   }
   pick();
   document.addEventListener("DOMContentLoaded", function () { // lang.js is deferred, so the picker exists only now
