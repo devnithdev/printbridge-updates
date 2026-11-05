@@ -135,9 +135,10 @@
   .theme:hover { border-color: var(--brand-text); }
   .theme:focus-visible { outline: 3px solid var(--halo); outline-offset: 2px; }
   .theme svg { width: 18px; height: 18px; }
-  .theme .moon { display: none; }
-  :root[data-dark] .theme .sun { display: none; }
-  :root[data-dark] .theme .moon { display: block; }
+  /* Like the print page: the button shows what it switches to (moon in light mode). */
+  .theme .sun { display: none; }
+  :root[data-dark] .theme .moon { display: none; }
+  :root[data-dark] .theme .sun { display: block; }
 
   main {
     flex: 1;
@@ -330,7 +331,7 @@
       <h1>Questions</h1>
       <p>Everything people usually ask about PrintBridge, in plain words.</p>
     </div>
-    <input class="search" id="search" type="search" placeholder="Search the questions, e.g. &ldquo;code&rdquo; or &ldquo;Mac&rdquo;" aria-label="Search the questions" autocomplete="off">
+    <input class="search" id="search" type="search" placeholder="Search, e.g. &ldquo;Mac&rdquo;" aria-label="Search the questions" autocomplete="off">
     <nav class="jump" id="jump" aria-label="Topics"><a href="#basics">The basics</a><a href="#setup">Setting it up</a><a href="#printing">Printing</a><a href="#anywhere">Printing from anywhere</a><a href="#updates">Updates and safety</a><a href="#problems">Problems and removing it</a></nav>
 
     <section class="group" id="basics" aria-labelledby="basics-h">
@@ -422,11 +423,11 @@
       </details>
       <details>
         <summary>Can I use it in Sinhala or Tamil? <span class="new">NEW</span></summary>
-        <p>Yes. Choose a language at the top of the printing page: Sinhala and Tamil are first, and <b>More languages...</b> lists the rest. Your phone or computer remembers the choice.</p>
+        <p>Yes. Choose a language at the top of the printing page: Sinhala and Tamil are first, and <b>More languages...</b> lists the rest. Your phone or computer remembers the choice, and the guide video plays in Sinhala or Tamil too.</p>
       </details>
       <details>
         <summary>Is there a video that shows how it works? <span class="new">NEW</span></summary>
-        <p>Yes, a 3-minute guide: installing on Windows and Mac, printing from a phone, from the printing page and from Excel. <a href="https://youtu.be/Cx2plyjPf7w">Watch it on YouTube</a>, or press <b>Watch the full guide</b> on the printing page.</p>
+        <p>Yes, a 3-minute guide: installing on Windows and Mac, printing from a phone, from the printing page and from Excel. It comes in English, <a href="https://youtu.be/sP1R5dWC5Hw">Sinhala</a> and <a href="https://youtu.be/5sw9WdwODrY">Tamil</a>: <a href="https://youtu.be/Cx2plyjPf7w">watch the English one on YouTube</a>, or press <b>Watch the full guide</b> on the printing page, which plays the one in the language you picked.</p>
       </details>
       <details>
         <summary>Is there a way to call for help?</summary>

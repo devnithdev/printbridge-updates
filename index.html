@@ -111,9 +111,10 @@
   .theme:hover { border-color: var(--brand-text); }
   .theme:focus-visible { outline: 3px solid var(--halo); outline-offset: 2px; }
   .theme svg { width: 18px; height: 18px; }
-  .theme .moon { display: none; }
-  :root[data-dark] .theme .sun { display: none; }
-  :root[data-dark] .theme .moon { display: block; }
+  /* Like the print page: the button shows what it switches to (moon in light mode). */
+  .theme .sun { display: none; }
+  :root[data-dark] .theme .moon { display: none; }
+  :root[data-dark] .theme .sun { display: block; }
 
   main {
     flex: 1;

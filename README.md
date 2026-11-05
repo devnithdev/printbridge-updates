@@ -33,7 +33,7 @@ No app to install on phones, no accounts. ☕ by [@devnithdev](https://github.co
 * **Cross-platform**: Seamlessly connects Windows 10/11 and macOS (Apple Silicon & Intel) machines across the local network.
 * **Smart print preview & queue**: Visual preview, printer cards with maker, kind and colour, and live queue tracking. A print goes only to the printer you chose, unless you tick the back-up printer option.
 * **Your language**: Sinhala and Tamil first, and more, on the printing page and this download page.
-* **Video guide**: [the full 3-minute guide on YouTube](https://youtu.be/Cx2plyjPf7w).
+* **Video guide**: the full 3-minute guide on YouTube in [English](https://youtu.be/Cx2plyjPf7w), [Sinhala](https://youtu.be/sP1R5dWC5Hw) and [Tamil](https://youtu.be/5sw9WdwODrY).
 
 ---
 
