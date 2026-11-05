@@ -299,7 +299,7 @@
 
   <section class="more" id="howto" aria-labelledby="howto-h">
     <h2 id="howto-h">Watch the full guide (3 minutes)</h2>
-    <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/Cx2plyjPf7w?rel=0" title="PrintBridge: the full guide" loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+    <div class="video"><iframe id="guideVideo" src="https://www.youtube-nocookie.com/embed/Cx2plyjPf7w?rel=0" title="PrintBridge: the full guide" loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
   </section>
 
   <section class="more" id="install" aria-labelledby="install-h">
@@ -431,6 +431,22 @@
       if (rel && rel.tag_name) document.getElementById("version").textContent = "Version " + rel.tag_name.replace(/^v/, "");
     })
     .catch(function () { /* stays "Latest version" */ });
+})();
+</script>
+<script>
+// Guide video: Sinhala or Tamil version when that language is picked, otherwise English.
+(function () {
+  var ids = { si: "sP1R5dWC5Hw", ta: "5sw9WdwODrY" }, f = document.getElementById("guideVideo");
+  function pick() {
+    var l = ""; try { l = localStorage.getItem("printbridge-language") || ""; } catch (e) {}
+    var u = "https://www.youtube-nocookie.com/embed/" + (ids[l] || "Cx2plyjPf7w") + "?rel=0";
+    if (f.src !== u) f.src = u;
+  }
+  pick();
+  document.addEventListener("DOMContentLoaded", function () { // lang.js is deferred, so the picker exists only now
+    var sel = document.getElementById("langSelect");
+    if (sel) sel.addEventListener("change", pick);
+  });
 })();
 </script>
 </body>
