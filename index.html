@@ -32,7 +32,7 @@
   "description": "Print from any phone, tablet, or computer to any printer in the office. One main computer runs the printing page, computers with printers share them, and everyone prints from a browser or virtual printer with no apps or accounts.",
   "url": "https://devnithdev.github.io/printbridge-updates/",
   "downloadUrl": "https://github.com/devnithdev/printbridge/releases/latest",
-  "softwareVersion": "4.2.9",
+  "softwareVersion": "4.2.12",
   "license": "https://opensource.org/licenses/MIT",
   "author": {
     "@type": "Person",
@@ -308,7 +308,7 @@
     <h2 id="install-h">How to install</h2>
     <div class="tabs" role="tablist" aria-label="Choose your computer">
       <button type="button" role="tab" id="tab-win" aria-controls="p-win" aria-selected="true">Windows</button>
-      <button type="button" role="tab" id="tab-mac" aria-controls="p-mac" aria-selected="false">Mac</button>
+      <button type="button" role="tab" id="tab-mac" aria-controls="p-mac" aria-selected="false" tabindex="-1">Mac</button>
     </div>
 
     <div class="panel" id="p-win" role="tabpanel" aria-labelledby="tab-win">
@@ -419,11 +419,20 @@
     Object.keys(tabs).forEach(function (k) {
       var on = k === key;
       document.getElementById(tabs[k][0]).setAttribute("aria-selected", on ? "true" : "false");
+      document.getElementById(tabs[k][0]).tabIndex = on ? 0 : -1; // one Tab stop; arrows move between them
       document.getElementById(tabs[k][1]).hidden = !on;
     });
   }
   document.getElementById("tab-win").addEventListener("click", function () { showTab("windows"); });
   document.getElementById("tab-mac").addEventListener("click", function () { showTab("mac"); });
+  document.querySelector(".tabs").addEventListener("keydown", function (e) {
+    if (["ArrowLeft", "ArrowRight", "Home", "End"].indexOf(e.key) === -1) return;
+    e.preventDefault();
+    var next = e.key === "Home" ? "windows" : e.key === "End" ? "mac"
+      : document.getElementById("tab-win").getAttribute("aria-selected") === "true" ? "mac" : "windows";
+    showTab(next);
+    document.getElementById(tabs[next][0]).focus();
+  });
   if (system === "mac" && !isPhone) showTab("mac");
 
   // --- the version number (just for show; the button works without it) -----
