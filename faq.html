@@ -43,7 +43,7 @@
       "name": "Is PrintBridge a free Google Cloud Print alternative?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. PrintBridge solves the same problem Google Cloud Print did: letting phones, tablets, and computers print without manufacturer drivers or complex setup. Unlike cloud services, PrintBridge runs entirely on your local office network with no third-party accounts, subscription fees, or data leaving your premises."
+        "text": "Yes. PrintBridge solves the same problem Google Cloud Print did: letting phones, tablets, and computers print to any printer without manufacturer drivers or complex setup. Unlike cloud services, PrintBridge runs entirely on your local office network with no third-party accounts, subscription fees, or data leaving your building."
       }
     },
     {
@@ -51,7 +51,7 @@
       "name": "Which files can it print?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "PDFs always print. Word, Excel, PowerPoint and photos print too when LibreOffice is installed on the main computer: tick 'Also install LibreOffice' during setup."
+        "text": "PDFs always print. Word, Excel, PowerPoint and photos print too when LibreOffice (free) is installed on the main computer: tick Also install LibreOffice during setup."
       }
     },
     {
@@ -133,7 +133,7 @@
     transition: border-color .15s, transform .15s;
   }
   .theme:hover { border-color: var(--brand-text); }
-  .theme:focus-visible { outline: 3px solid var(--halo); outline-offset: 2px; }
+  .theme:focus-visible { outline: 2px solid var(--brand-text); outline-offset: 2px; }
   .theme svg { width: 18px; height: 18px; }
   /* Like the print page: the button shows what it switches to (moon in light mode). */
   .theme .sun { display: none; }
@@ -229,7 +229,7 @@
   }
   .download:hover { background: var(--brand-dark); }
   .download:active { transform: translateY(1px); }
-  .download:focus-visible { outline: 3px solid var(--halo); outline-offset: 3px; }
+  .download:focus-visible { outline: 2px solid var(--brand-text); outline-offset: 3px; }
   .download svg { width: 20px; height: 20px; flex: none; }
 
   .meta { margin: 14px 0 0; font-size: 14px; color: var(--soft); }
@@ -263,7 +263,7 @@
   }
   .egg:hover .cup, .egg:focus-visible .cup, .egg.on .cup { opacity: 1; }
   .egg:hover b, .egg:focus-visible b, .egg.on b { opacity: 1; translate: 0 -50%; }
-  .egg:focus-visible { outline: 2px solid var(--halo); outline-offset: 4px; border-radius: 6px; }
+  .egg:focus-visible { outline: 2px solid var(--brand-text); outline-offset: 4px; border-radius: 6px; }
 
   @media (max-width: 420px) {
     .card { padding: 36px 20px 24px; }
@@ -283,7 +283,9 @@
     font: inherit; margin: 0 0 10px;
   }
   .search:focus { outline: 3px solid var(--halo); border-color: var(--brand-text); }
+  .search:focus-visible { outline: 2px solid var(--brand-text); outline-offset: 2px; }
   .jump { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 8px; }
+  .jump[hidden] { display: none; }
   .jump a {
     font-size: 13px; font-weight: 600; text-decoration: none; color: var(--brand-text);
     background: var(--halo); padding: 6px 12px; border-radius: 999px;
@@ -298,7 +300,7 @@
   .faq ul { margin: 0 0 16px; padding-left: 22px; color: var(--soft); }
   .faq li { margin: 2px 0; }
   .faq b { color: var(--ink); font-weight: 600; }
-  .new { font-size: 11px; font-weight: 700; color: #fff; background: var(--green); padding: 2px 7px; border-radius: 999px; margin-left: 8px; vertical-align: 2px; letter-spacing: .03em; }
+  .new { font-size: 11px; font-weight: 700; color: #fff; background: #15803d; padding: 2px 7px; border-radius: 999px; margin-left: 8px; vertical-align: 2px; letter-spacing: .03em; }
   .none { color: var(--soft); text-align: center; padding: 28px 0; }
   .none[hidden] { display: none; }
   .ask {
@@ -415,7 +417,7 @@
       </details>
       <details>
         <summary>What if the printer I chose is switched off?</summary>
-        <p>The job waits and prints when it comes back. Nothing moves to another printer unless you tick <b>Print on another printer</b> before you press Print. Then PrintBridge tries a printer of the same kind first. Inkjet and laser printers stand in for each other only if you also tick the second, smaller box. Dot matrix and receipt printers only ever use their own kind.</p>
+        <p>The job waits and prints when it comes back. Nothing moves to another printer unless you tick <b>If this printer is off or fails, print on another &hellip; printer</b> before you press Print. Then PrintBridge tries a printer of the same kind. Inkjet and laser printers stand in for each other only if you tick <b>Or &hellip; instead</b> as well (when there is no printer of the same kind, that is the only box shown). Dot matrix and receipt printers only ever use their own kind.</p>
       </details>
       <details>
         <summary>What happens after a power cut?</summary>
@@ -483,7 +485,7 @@
       </details>
       <details>
         <summary>Does PrintBridge keep my files?</summary>
-        <p>No. A file is kept only until it has printed, then it is deleted from the main computer.</p>
+        <p>No. A file is kept on the main computer only until it has printed, then it is deleted (one that is never printed is deleted after 3 hours). If you use the optional drop page for printing from outside the office, a file waits online until the office collects it, locked so only the office can open it, for 14 days at most.</p>
       </details>
       </div>
     </section>

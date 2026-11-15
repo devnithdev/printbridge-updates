@@ -32,7 +32,7 @@
   "description": "Print from any phone, tablet, or computer to any printer in the office. One main computer runs the printing page, computers with printers share them, and everyone prints from a browser or virtual printer with no apps or accounts.",
   "url": "https://devnithdev.github.io/printbridge-updates/",
   "downloadUrl": "https://github.com/devnithdev/printbridge/releases/latest",
-  "softwareVersion": "4.2.12",
+  "softwareVersion": "4.2.13",
   "license": "https://opensource.org/licenses/MIT",
   "author": {
     "@type": "Person",
@@ -109,7 +109,7 @@
     transition: border-color .15s, transform .15s;
   }
   .theme:hover { border-color: var(--brand-text); }
-  .theme:focus-visible { outline: 3px solid var(--halo); outline-offset: 2px; }
+  .theme:focus-visible { outline: 2px solid var(--brand-text); outline-offset: 2px; }
   .theme svg { width: 18px; height: 18px; }
   /* Like the print page: the button shows what it switches to (moon in light mode). */
   .theme .sun { display: none; }
@@ -214,7 +214,7 @@
   }
   .download:hover { background: var(--brand-dark); }
   .download:active { transform: translateY(1px); }
-  .download:focus-visible { outline: 3px solid var(--halo); outline-offset: 3px; }
+  .download:focus-visible { outline: 2px solid var(--brand-text); outline-offset: 3px; }
   .download svg { width: 20px; height: 20px; flex: none; }
 
   .meta { margin: 14px 0 0; font-size: 14px; color: var(--soft); }
@@ -248,7 +248,7 @@
   }
   .egg:hover .cup, .egg:focus-visible .cup, .egg.on .cup { opacity: 1; }
   .egg:hover b, .egg:focus-visible b, .egg.on b { opacity: 1; translate: 0 -50%; }
-  .egg:focus-visible { outline: 2px solid var(--halo); outline-offset: 4px; border-radius: 6px; }
+  .egg:focus-visible { outline: 2px solid var(--brand-text); outline-offset: 4px; border-radius: 6px; }
 
   @media (max-width: 420px) {
     .card { padding: 36px 20px 24px; }
