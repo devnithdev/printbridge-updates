@@ -143,37 +143,8 @@
   main {
     flex: 1;
     display: flex; flex-direction: column; align-items: center;
-    padding: 72px 16px 32px;
+    padding: 68px 16px 32px;
   }
-  .hero { min-height: calc(100vh - 140px); min-height: calc(100svh - 140px); display: grid; place-items: center; width: 100%; }
-  .hint-more { display: block; text-align: center; margin: 18px auto 0; font-size: 13px; color: var(--soft); text-decoration: none; }
-  .hint-more:hover { color: var(--brand-text); }
-
-  /* How to install, and questions */
-  section.more { width: 100%; max-width: 680px; margin: 0 auto; padding: 40px 0 8px; }
-  section.more h2 { font-size: 22px; margin: 0 0 16px; letter-spacing: -0.01em; }
-  .tabs { display: inline-flex; gap: 4px; padding: 4px; border-radius: 10px; background: var(--card); border: 1px solid var(--line); margin: 0 0 16px; }
-  .tabs button {
-    border: 0; background: transparent; color: var(--soft);
-    font: inherit; font-weight: 600; font-size: 14px; padding: 8px 16px; border-radius: 7px; cursor: pointer;
-  }
-  .tabs button[aria-selected="true"] { background: var(--halo); color: var(--brand-text); }
-  .tabs button:focus-visible { outline: 2px solid var(--brand-text); outline-offset: 1px; }
-  .panel { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; }
-  .panel[hidden] { display: none; }
-  ol.steps { margin: 0; padding: 0; list-style: none; counter-reset: step; }
-  ol.steps li { counter-increment: step; position: relative; padding: 0 0 14px 40px; }
-  ol.steps li:last-child { padding-bottom: 0; }
-  ol.steps li::before {
-    content: counter(step); position: absolute; left: 0; top: 0;
-    width: 26px; height: 26px; border-radius: 50%;
-    background: var(--brand); color: #fff; font-size: 13px; font-weight: 700;
-    display: grid; place-items: center;
-  }
-  ol.steps b { font-weight: 600; }
-  .steps .sub { display: block; color: var(--soft); font-size: 14px; margin-top: 2px; }
-  .order { margin: 14px 0 0; font-size: 14px; color: var(--soft); }
-  .order b { color: var(--ink); font-weight: 600; }
 
   .faq { border-top: 1px solid var(--line); }
   .faq details { border-bottom: 1px solid var(--line); }
@@ -190,58 +161,6 @@
   .faq details[open] summary::after { transform: translateY(-30%) rotate(-135deg); }
   .faq summary:focus-visible { outline: 2px solid var(--brand-text); outline-offset: 2px; border-radius: 4px; }
   .faq p { margin: 0 0 16px; color: var(--soft); padding-right: 24px; }
-  .card {
-    width: 100%; max-width: 440px;
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    padding: 40px 32px 32px;
-    text-align: center;
-    overflow: hidden;
-    position: relative;
-  }
-  /* The blue/green bar every PrintBridge page has */
-  .card::before {
-    content: ""; position: absolute; left: 0; right: 0; top: 0; height: 5px;
-    background: linear-gradient(90deg, var(--brand) 0 80%, var(--green) 80%);
-  }
-
-  .logo {
-    width: 96px; height: 96px; margin: 4px auto 18px;
-    border-radius: 28px;
-    background: var(--halo);
-    color: var(--brand-text);
-    display: grid; place-items: center;
-  }
-  .logo .mug { font-size: 52px; line-height: 1; }
-
-  h1 { font-size: 30px; line-height: 1.15; margin: 0 0 8px; letter-spacing: -0.01em; }
-  .tagline { color: var(--soft); margin: 0 0 28px; }
-
-  .download {
-    display: flex; align-items: center; justify-content: center; gap: 10px;
-    width: 100%;
-    padding: 15px 20px;
-    border-radius: 12px;
-    background: var(--brand); color: #fff;
-    font-size: 17px; font-weight: 600; text-decoration: none;
-    transition: background .15s, transform .1s;
-  }
-  .download:hover { background: var(--brand-dark); }
-  .download:active { transform: translateY(1px); }
-  .download:focus-visible { outline: 2px solid var(--brand-text); outline-offset: 3px; }
-  .download svg { width: 20px; height: 20px; flex: none; }
-
-  .meta { margin: 14px 0 0; font-size: 14px; color: var(--soft); }
-  .meta a { color: var(--brand-text); text-decoration: none; font-weight: 600; }
-  .meta a:hover { text-decoration: underline; }
-
-  .note {
-    margin: 22px 0 0; padding: 12px 14px;
-    border-radius: 10px; background: var(--halo);
-    font-size: 14px; color: var(--ink); text-align: left;
-  }
-  .note[hidden] { display: none; }
 
   footer {
     padding: 28px 16px 28px; text-align: center;
@@ -265,12 +184,6 @@
   .egg:hover b, .egg:focus-visible b, .egg.on b { opacity: 1; translate: 0 -50%; }
   .egg:focus-visible { outline: 2px solid var(--brand-text); outline-offset: 4px; border-radius: 6px; }
 
-  @media (max-width: 420px) {
-    .card { padding: 36px 20px 24px; }
-    h1 { font-size: 26px; }
-  }
-</style>
-<style>
   /* The questions page */
   .faq-page { width: 100%; max-width: 720px; margin: 0 auto; }
   .back { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--soft); text-decoration: none; margin: 0 0 18px; }
@@ -308,7 +221,7 @@
     background: var(--card); border: 1px solid var(--line); color: var(--soft); font-size: 15px;
   }
   .ask b { color: var(--ink); }
-  main.page { padding-top: 56px; }
+  main.page { padding-top: 68px; }
   /* Language picker, top left (lang.js) */
   .lang-pick { position: absolute; top: 22px; left: 16px; display: flex; align-items: center; gap: 6px; color: var(--ink); z-index: 2; }
   .lang-pick select { font: inherit; font-size: 14px; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--ink); max-width: 46vw; }
@@ -536,6 +449,9 @@
     if (theme) root.setAttribute("data-theme", theme); else root.removeAttribute("data-theme");
     var dark = theme ? theme === "dark" : !!(media && media.matches);
     if (dark) root.setAttribute("data-dark", ""); else root.removeAttribute("data-dark");
+    var label = dark ? "Switch to light mode" : "Switch to dark mode";
+    var btn = document.getElementById("theme");
+    if (btn) { btn.setAttribute("aria-label", label); btn.title = label; }
   }
   apply(saved());
   if (media && media.addEventListener) media.addEventListener("change", function () { apply(saved()); });

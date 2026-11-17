@@ -280,7 +280,7 @@
     <div class="logo" aria-hidden="true"><span class="mug notranslate" translate="no">☕️</span></div>
 
     <h1 class="notranslate" translate="no">PrintBridge</h1>
-    <p class="tagline">Print from any computer to any printer in the office.</p>
+    <p class="tagline">Print from any phone or computer to any printer in the office.</p>
 
     <a class="download" id="download" href="https://github.com/devnithdev/printbridge-updates/releases/latest">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
@@ -357,6 +357,9 @@
     if (theme) root.setAttribute("data-theme", theme); else root.removeAttribute("data-theme");
     var dark = theme ? theme === "dark" : !!(media && media.matches);
     if (dark) root.setAttribute("data-dark", ""); else root.removeAttribute("data-dark");
+    var label = dark ? "Switch to light mode" : "Switch to dark mode";
+    var btn = document.getElementById("theme");
+    if (btn) { btn.setAttribute("aria-label", label); btn.title = label; }
   }
   apply(saved());
   if (media && media.addEventListener) media.addEventListener("change", function () { apply(saved()); });
